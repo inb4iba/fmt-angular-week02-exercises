@@ -1,0 +1,66 @@
+<h2 class="text-light fw-bold">Cadastrar Matéria</h2>
+<form action="" class="bg-light p-3 rounded m-3 col-12">
+  <div class="mb-2">
+    <label for="name" class="form-label">Nome:</label>
+    <input type="text" name="name" id="name" class="form-control red-outline" />
+  </div>
+  <div class="mb-2">
+    <label for="class-hours" class="form-label">Horas aula:</label>
+    <input
+      type="number"
+      name="class-hours"
+      id="class-hours"
+      class="form-control red-outline"
+    />
+  </div>
+  <div class="mb-2">
+    <label for="school" class="form-label">Escola:</label>
+    <input
+      type="text"
+      name="school"
+      id="school"
+      class="form-control red-outline"
+    />
+  </div>
+  <div class="mb-2">
+    <label for="teacher" class="form-label">Professor:</label>
+    <select name="teacher" id="teacher" class="form-select red-outline">
+      <option value="-1" selected disabled>Escolha uma opção</option>
+      <option *ngFor="let teacher of teachers; index as i" value="{{ i }}">
+        {{ teacher }}
+      </option>
+    </select>
+  </div>
+  <div class="my-2">
+    <label class="d-block mb-1">Opcional:</label>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input red-outline red-switch"
+        type="radio"
+        id="isNotOptional"
+        name="optional"
+        checked
+      />
+      <label class="form-check-label" for="isNotOptional"> Não </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input red-outline red-switch"
+        type="radio"
+        id="isOptional"
+        name="optional"
+      />
+      <label class="form-check-label" for="isOptional"> Sim </label>
+    </div>
+  </div>
+  <div class="d-flex justify-content-end">
+    <button
+      type="button"
+      class="btn btn-danger"
+      data-bs-toggle="modal"
+      data-bs-target="#sendFormModal"
+    >
+      Cadastrar
+    </button>
+  </div>
+</form>
